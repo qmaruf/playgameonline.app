@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Main pages
+Allow: /
+Allow: /tetris/
+
+# Assets
+Allow: /assets/
+Allow: /tetris/tetris.css
+Allow: /tetris/tetris.js
+Allow: /tetris/tetris-page.css
+
+# Sitemap
+Sitemap: https://playgameonline.app/sitemap.xml

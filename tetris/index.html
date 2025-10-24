@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Play Tetris Online Free - Classic Block Puzzle Game | PlayGameOnline.app</title>
+    <meta name="description" content="Play classic Tetris online for free! Multi-level block puzzle game with smooth animations. No download required. Play instantly in your browser on desktop and mobile.">
+    <meta name="keywords" content="tetris online, play tetris free, tetris game, block puzzle, classic tetris, tetris browser game, free tetris, tetris no download">
+    <meta name="author" content="PlayGameOnline.app">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="game">
+    <meta property="og:url" content="https://playgameonline.app/tetris/">
+    <meta property="og:title" content="Play Tetris Online Free - Classic Block Puzzle Game">
+    <meta property="og:description" content="Play classic Tetris online for free! Multi-level block puzzle game with smooth animations. No download required.">
+    <meta property="og:site_name" content="PlayGameOnline.app">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://playgameonline.app/tetris/">
+    <meta property="twitter:title" content="Play Tetris Online Free - Classic Block Puzzle Game">
+    <meta property="twitter:description" content="Play classic Tetris online for free! Multi-level block puzzle game with smooth animations. No download required.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://playgameonline.app/tetris/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+    <!-- Game Styles -->
+    <link rel="stylesheet" href="tetris.css">
+    <link rel="stylesheet" href="tetris-page.css">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://playgameonline.app"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tetris",
+            "item": "https://playgameonline.app/tetris/"
+        }]
+    }
+    </script>
+
+    <!-- Game Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Tetris Online",
+        "description": "Classic Tetris block puzzle game with multi-level progression and smooth animations",
+        "url": "https://playgameonline.app/tetris/",
+        "genre": "Puzzle",
+        "gamePlatform": "Web Browser",
+        "operatingSystem": "Any",
+        "applicationCategory": "Game",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="game-nav">
+        <div class="nav-content">
+            <a href="../" class="home-link">🎮 PlayGameOnline.app</a>
+            <div class="breadcrumb">
+                <a href="../">Home</a> / <span>Tetris</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Game Info Header -->
+    <header class="game-header">
+        <div class="game-info">
+            <h1>Tetris - Classic Block Puzzle Game</h1>
+            <p class="game-description">
+                Stack falling blocks to create horizontal lines and clear them! This classic Tetris game features
+                multiple levels, increasing difficulty, and smooth animations. Perfect for quick gaming sessions
+                or extended puzzle-solving challenges.
+            </p>
+            <div class="game-features">
+                <span class="feature-tag">🧩 7 Classic Pieces</span>
+                <span class="feature-tag">📈 Progressive Levels</span>
+                <span class="feature-tag">⚡ Smooth Animations</span>
+                <span class="feature-tag">📱 Mobile Friendly</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Game Container -->
+    <main class="game-main">
+        <div id="game-container">
+            <div id="game-area">
+                <canvas id="gameCanvas" width="400" height="800"></canvas>
+            </div>
+            <div id="sidebar">
+                <div id="score-panel">
+                    <h3>SCORE</h3>
+                    <div id="score">0</div>
+                </div>
+                <div id="level-panel">
+                    <h3>LEVEL</h3>
+                    <div id="level">1</div>
+                </div>
+                <div id="lines-panel">
+                    <h3>LINES</h3>
+                    <div id="lines">0</div>
+                </div>
+                <div id="next-panel">
+                    <h3>NEXT</h3>
+                    <canvas id="nextCanvas" width="120" height="120"></canvas>
+                </div>
+                <div id="controls">
+                    <h3>CONTROLS</h3>
+                    <p>← → Move</p>
+                    <p>↑ Rotate</p>
+                    <p>↓ Soft Drop</p>
+                    <p>SPACE Hard Drop</p>
+                    <p>P Pause</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Over Modal -->
+        <div id="game-over" style="display: none;">
+            <div id="game-over-content">
+                <h2>GAME OVER</h2>
+                <p>Final Score: <span id="final-score">0</span></p>
+                <p>Level Reached: <span id="final-level">1</span></p>
+                <button id="restart-btn">Play Again</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Game Instructions -->
+    <section class="game-instructions">
+        <div class="instructions-content">
+            <h2>How to Play Tetris</h2>
+            <div class="instructions-grid">
+                <div class="instruction">
+                    <h3>🎯 Objective</h3>
+                    <p>Stack falling tetromino pieces to create complete horizontal lines. When a line is filled, it disappears and you earn points!</p>
+                </div>
+                <div class="instruction">
+                    <h3>🎮 Controls</h3>
+                    <p>Use arrow keys to move and rotate pieces. Space bar for instant drop. Master the controls for higher scores!</p>
+                </div>
+                <div class="instruction">
+                    <h3>📈 Scoring</h3>
+                    <p>Clear multiple lines at once for bonus points! Higher levels give more points per line cleared.</p>
+                </div>
+                <div class="instruction">
+                    <h3>🏆 Strategy</h3>
+                    <p>Plan ahead and leave space for the I-piece to clear 4 lines at once (Tetris) for maximum points!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Games -->
+    <section class="related-games">
+        <div class="related-content">
+            <h2>More Free Online Games</h2>
+            <p><a href="../">← Back to Game Collection</a></p>
+            <p>Enjoy more classic games and new releases on PlayGameOnline.app - your destination for instant, free browser gaming!</p>
+        </div>
+    </section>
+
+    <!-- Game Script -->
+    <script src="tetris.js"></script>
+</body>
+</html>
